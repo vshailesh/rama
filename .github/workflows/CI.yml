@@ -200,7 +200,7 @@ jobs:
         with:
           env-vars: "RUST_TOOLCHAIN=${{env.RUST_TOOLCHAIN}}"
       - name: Run tests
-        run: RUST_LOG="trace" cargo test --all-features --tests integration --exact -- integration::http2_parallel_10
+        run: RUST_LOG="trace" cargo test --all-features --tests integration -- --exact integration::http2_parallel_10
 
   # test-ignored-msrv:
   #   needs: [check, check-msrv, check-all-features]
